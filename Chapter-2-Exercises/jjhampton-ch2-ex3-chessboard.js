@@ -17,22 +17,22 @@
 
 const size = 8;  // this can be changed to any size grid
 
-let string = '';
+let outputString = '';
 
 for (let i = 0; i < size; i++) {
     for (let j = 0; j <= size; j ++) {
         
         if (j === size) {
-            string += '\n';
+            outputString += '\n';
             break;
         }
         
         let character = i + j; // toggles the output character on even/odd lines
         if (character % 2 === 0) 
-            string += ' ';
+            outputString += ' ';
         else 
-            string += '#';
+            outputString += '#';
     }
 }
 
-console.log(string);
+console.log(outputString);
