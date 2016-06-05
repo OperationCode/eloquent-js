@@ -1,7 +1,15 @@
 function chessBoard (size) {
-	var size = size / 2;
+	var size = size;
+	var board = '';
 		for(var i=0; i<size; i++) {
-			console.log('# # # #');
-			console.log(' # # # #');
-		}//for end
+			for (var j = 0; j<size; j++) {
+				if ((j + i) % 2 === 0) {
+					board +=  " ";
+				} else { 
+					board += "#";
+				}//end if
+			}//end second for loop
+			board += '\n';
+		}//end first for loop
+	console.log(board);
 }//function end
