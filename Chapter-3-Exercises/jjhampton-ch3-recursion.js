@@ -25,6 +25,3 @@ console.log('testing against 50:', isEven(50));
 console.log('testing against 75:', isEven(75));
 console.log('testing against -1:', isEven(-1));
 console.log('testing against -10:', isEven(-10));
-
-
-

@@ -16,4 +16,3 @@ console.log(min(-11, -10));
 console.log(min(11, 10));
 console.log(min(10, 10));
 console.log(min('a', -10)); // should not calculate minimum, return string instead
-
