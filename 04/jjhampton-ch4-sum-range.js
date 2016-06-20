@@ -27,14 +27,24 @@ function sum(arrayOfNumbers) {
 
 console.log(sum(range(1,10)));
 
-// As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used to build up the array. If no step is given, the array elements go up by increments of one, corresponding to the old behavior. The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it also works with negative step values so that range(5, 2, -1) produces [5, 4, 3, 2
+// As a bonus assignment, modify your range function to take an optional third argument that indicates the “step” value used to build up the array. If no step is given, the array elements go up by increments of one, corresponding to the old behavior. The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it also works with negative step values so that range(5, 2, -1) produces [5, 4, 3, 2].
 
-function rangeWithStep(start, end, step = 1) {
+function rangeWithStep(start, end, step = start < end ? 1 : -1) {  // ES2015 default parameter
     const startToEnd = [];
-    for (let i = start; i <= end; i += step) {
-        startToEnd.push(i);
+
+    if (start < end) {
+        for (let i = start; i <= end; i += step) {
+            startToEnd.push(i);
+        }
     }
+    else {
+        for (let i = start; i >= end; i += step) {
+            startToEnd.push(i);
+        }
+    }
+  
     return startToEnd;
+    
 }
 
 console.log(rangeWithStep(1,10));
