@@ -10,12 +10,11 @@
 
 function range(start, end) {
     // do stuff here
-    const sum = [];
+    const startToEnd = [];
     for (let i = start; i <= end; i++) {
-        sum.push(i);
+        startToEnd.push(i);
     }
-    
-    return sum;
+    return startToEnd;
 }
 
 console.log(range(1,10));
