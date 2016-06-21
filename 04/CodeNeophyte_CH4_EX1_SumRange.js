@@ -1,12 +1,16 @@
 function range(start, end, step) {
   var output = [];
   //console.log(step);
-  if (typeof step !== 'undefined') {
+  if (typeof step === 'undefined') {
+    step = 1;
+  } 
+  
+  if (step > 0) {
     for (var i = start; i<= end; i += step) {
     output.push(i); 
     }
   } else {
-    for (var i = start; i<= end; i++) {
+    for (var i = start; i>= end; i += step) {
     output.push(i); 
     }
   }
