@@ -1,10 +1,10 @@
 function reverseArray (array) {
-  console.log(array.length);
+  //console.log(array.length);
   var newArray = [];
   for (var i = 0; i < array.length; i++) {
     newArray.unshift(array[i]);
   }
-  console.log(newArray);
+  //console.log(newArray);
   return newArray;
 }
 
@@ -14,7 +14,7 @@ function reverseArray2 (array) {
   array.forEach(function(arr){
         newArray.unshift(arr);
   });  
-  console.log(newArray);
+  //console.log(newArray);
   return newArray;
 }
 
@@ -28,6 +28,6 @@ function reverseArrayInPlace (array) {
     array[left] = array[right];
     array[right] = temp;
   }
-  console.log(array);
+  //console.log(array);
   return array;
 }
