@@ -11,8 +11,9 @@ function arrayToList(array) {
 
 function listToArray(list) {
     let array = [];
-    for (let currentNode = list; currentNode; currentNode = currentNode.rest) {
-        array.push(currentNode.value);
+     for (let currentNode = list, i = 0; currentNode; i++) {
+        array[i] = nth(list, i);
+        currentNode = currentNode.rest;
     }
     return array;
 }
@@ -26,18 +27,28 @@ function prepend(element, list) {
 }
 
 function nth(list, number) {
-    const array = listToArray(list); 
-    return array[number];
- 
+    if (!number) 
+        return list.value;
+
+    number--;
+    if (list.rest)
+        return nth(list.rest, number)
+
+    return undefined;
 }
 
-const theArray = [1, 2, 3, 4, 5, 6, 7, 8];
+const theArray = [1, 2, 3 ];
 console.log(arrayToList(theArray));
 
-const theArray3 = [10, 20, 30];
-console.log(arrayToList(theArray3));
-
-const theList = arrayToList([1, 2, 3, 4, 5, 6, 7, 8]);
+const theList = arrayToList([1, 2, 3 ]);
 console.log(listToArray(theList));
 
-console.log(nth(arrayToList([10, 20, 30]), 1));
+console.log(nth(arrayToList([10, 20, 30, 40, 50]), 4));
+console.log(nth(arrayToList([10, 20, 30, 40, 50]), 8));
+
+
+
+
+
+
+
