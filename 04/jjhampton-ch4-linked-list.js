@@ -4,16 +4,10 @@ function arrayToList(array) {
     const arrayLength = array.length;
     let list = null;
     for (let i = array.length - 1; i >= 0; i-- ) {
-        list = {
-            value: array[i],
-            rest: list
-        };
+        list = prepend(array[i], list);
     }
     return list;
 }
-
-const theArray = [1, 2, 3, 4, 5, 6, 7, 8];
-console.log(arrayToList(theArray));
 
 function listToArray(list) {
     let array = [];
@@ -23,14 +17,16 @@ function listToArray(list) {
     return array;
 }
 
-const theList = arrayToList([1, 2, 3, 4, 5, 6, 7, 8]);
-console.log(listToArray(theList));
-
-// write helper function 'prepend', which takes an element and a list and creates a new list that adds the element to the front of the input list
-
 function prepend(element, list) {
-    let newList;
-
-    // do some stuff here
+    let newList = {
+            value: element,
+            rest: list
+        };
     return newList;
 }
+
+const theArray = [1, 2, 3, 4, 5, 6, 7, 8];
+console.log(arrayToList(theArray));
+
+const theList = arrayToList([1, 2, 3, 4, 5, 6, 7, 8]);
+console.log(listToArray(theList));
