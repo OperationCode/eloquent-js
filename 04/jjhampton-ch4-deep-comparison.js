@@ -1,38 +1,29 @@
 //Write a function, deepEqual, that takes two values and returns true only if they are the same value or are objects with the same properties whose values are also equal when compared with a recursive call to deepEqual.
 
 function deepEqual(x, y) {
-	if (((typeof x == "object") && (x != null)) && ((typeof y == "object") && (y != null))) {
-		
-		var compareLength = function(x,y) {
-			let lengthX = 0;
-			let lengthY = 0;
-			for (var prop in x) {
-				lengthX++;
-			}
-			for (var prop in y) {
-				lengthY++;
-			} 
-			return (lengthX == lengthY);
-		}
-
-		if (compareLength(x,y) == false) {
-			return false;
-		}
-
-		for (var prop in x) {
-			if (prop in y) {
-				if (deepEqual(x[prop], y[prop]) == false) {
-					return false;
-				}
-			}
-			else {
-				return false;
-			} 
-		}
-		return true;
-	}
-return (x === y);
+    if (isObject(x) && isObject(y) && areSameLength(x, y)) {
+        return Object.keys(x).every((key) => {
+            return y.hasOwnProperty(key) ? deepEqual(x[key], y[key]) : false;
+        });     
+    }
+    return (x === y);
 };
+
+function isObject(value) {
+    return typeof value === 'object' && value !== null;
+}
+
+function areSameLength(x, y) {
+    let lengthX = 0;
+    let lengthY = 0;
+    for (let prop in x) {
+        lengthX++;
+    }
+    for (let prop in y) {
+        lengthY++;
+    } 
+    return (lengthX === lengthY);
+}
 
 const obj = {here: {is: "an"}, object: 2};
 
