@@ -14,4 +14,18 @@ function arrayToList(array) {
     return list;
 }
 
-console.log(arrayToList([1,2,3]));
+const theArray = [1, 2, 3];
+console.log(arrayToList(theArray));
+
+function listToArray(list) {
+    console.log(list);
+    const array = [
+        list.value, 
+        list.rest.value, 
+        list.rest.rest.value
+    ];
+    return array;
+}
+
+const theList = arrayToList([1, 2, 3]);
+console.log(listToArray(theList));
