@@ -25,8 +25,19 @@ function prepend(element, list) {
     return newList;
 }
 
+function nth(list, number) {
+    const array = listToArray(list); 
+    return array[number];
+ 
+}
+
 const theArray = [1, 2, 3, 4, 5, 6, 7, 8];
 console.log(arrayToList(theArray));
 
+const theArray3 = [10, 20, 30];
+console.log(arrayToList(theArray3));
+
 const theList = arrayToList([1, 2, 3, 4, 5, 6, 7, 8]);
 console.log(listToArray(theList));
+
+console.log(nth(arrayToList([10, 20, 30]), 1));
