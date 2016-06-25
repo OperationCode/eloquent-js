@@ -16,17 +16,15 @@ const theArray = [1, 2, 3, 4, 5, 6, 7, 8];
 console.log(arrayToList(theArray));
 
 function listToArray(list) {
-    console.log(list);
-    const array = [
-        list.value, 
-        list.rest.value, 
-        list.rest.rest.value
-    ];
+    let array = [];
+    for (let currentNode = list; currentNode; currentNode = currentNode.rest) {
+        array.push(currentNode.value);
+    }
     return array;
 }
 
-// const theList = arrayToList([1, 2, 3]);
-// console.log(listToArray(theList));
+const theList = arrayToList([1, 2, 3, 4, 5, 6, 7, 8]);
+console.log(listToArray(theList));
 
 // write helper function 'prepend', which takes an element and a list and creates a new list that adds the element to the front of the input list
 
