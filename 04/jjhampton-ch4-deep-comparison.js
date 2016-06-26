@@ -14,15 +14,7 @@ function isObject(value) {
 }
 
 function areSameLength(x, y) {
-    let lengthX = 0;
-    let lengthY = 0;
-    for (let prop in x) {
-        lengthX++;
-    }
-    for (let prop in y) {
-        lengthY++;
-    } 
-    return (lengthX === lengthY);
+    return Object.keys(x).length === Object.keys(y).length;
 }
 
 const obj = {here: {is: "an"}, object: 2};
