@@ -1,0 +1,19 @@
+{
+  "name": "eloquent-js",
+  "version": "1.0.0",
+  "babel": {
+      "presets": ["es2015"]
+  },
+  "description": "Study group for the book 'Eloquent Javascript', Second Edition, by Marijn Haverbeke. http://eloquentjavascript.net/",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OperationCode/eloquent-js.git"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/OperationCode/eloquent-js#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
