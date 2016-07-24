@@ -3,19 +3,19 @@
 // Write two functions, every and some, that behave like these methods, except that they take the array as their first argument rather than being a method.
 
 function every(array, action) {
-    let conditional = true;
     for (let i = 0; i < array.length; i++) {
-        if (!action(array[i])) conditional = false;
+        if (!action(array[i])) 
+            return false;
     }
-    return conditional;
+    return true;
 }
 
 function some(array, action) {
-    let conditional = false;
     for (let i = 0; i < array.length; i++) {
-        if (action(array[i])) conditional = true;
+        if (action(array[i])) 
+            return true;
     }
-    return conditional;
+    return false;
 }
 
 console.log(every([NaN, NaN, NaN], isNaN));
