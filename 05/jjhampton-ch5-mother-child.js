@@ -18,7 +18,7 @@ const ageDifferences = ancestry
     return person.born - motherObject.born;
   });
 
-console.log(average(ageDifferences));
+console.log(getAverage(ageDifferences));
 
 // helper functions
 
@@ -26,7 +26,12 @@ function hasKnownMother(person) {
   return personsByName.hasOwnProperty([person.mother]);
 }
 
-function average(array) {
+function getAverage(array) {
   function sum(prev, cur) { return prev + cur; }
-  return array.reduce(sum) / array.length;
+  const average = array.reduce(sum) / array.length;
+  return isInteger(average) ? average : average.toFixed(1);
+}
+
+function isInteger(number) {
+    return (number === parseInt(number, 10));
 }
