@@ -20,7 +20,7 @@ ancestry.forEach((person) =>  {
 for (let century in centuries) {
     if ( centuries.hasOwnProperty([century]) ){
         let averageAge = getAverage(centuries[century]);
-        console.log(averageAge);
+        console.log(century + ': ' + averageAge);
     }
 }
 
