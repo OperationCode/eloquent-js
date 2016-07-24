@@ -11,14 +11,14 @@ const centuries = {};
 ancestry.forEach((person) =>  {
     const personAge = person.died - person.born;
     const century = Math.ceil(person.died / 100);
-    if (!centuries[century])
-        centuries[century] = [personAge];
-    else
+    if ( centuries.hasOwnProperty(century) )
         centuries[century].push(personAge);
+    else
+        centuries[century] = [personAge];
 });
 
 for (let century in centuries) {
-    if ( centuries.hasOwnProperty([century]) ){
+    if ( centuries.hasOwnProperty(century) ){
         let averageAge = getAverage(centuries[century]);
         console.log(century + ': ' + averageAge);
     }
