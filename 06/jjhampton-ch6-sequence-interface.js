@@ -36,13 +36,22 @@ function ArraySeq(array) {
     return new Sequence(array);
 }
 
+function RangeSeq(from, to) {
+    var collection = [];
+    for (var i = from; i <= to; i++) {
+        collection.push(i);
+    }
+
+    return new Sequence(collection);
+}
+
 
 logFive(new ArraySeq([1, 2]));
 logFive(new ArraySeq([1, 2, 3, 4, 5]));
 logFive(new ArraySeq([1, 2, 3, 4, 5, 6, 7]));
 logFive(new ArraySeq([]));
 
-//logFive(new RangeSeq(100, 1000));
+logFive(new RangeSeq(100, 1000));
 // → 100
 // → 101
 // → 102
